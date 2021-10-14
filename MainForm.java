@@ -1,6 +1,7 @@
 package spdvi;
 
 
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
@@ -85,9 +86,9 @@ public class MainForm extends javax.swing.JFrame {
         lblGender = new javax.swing.JLabel();
         mnuBar = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuExit = new javax.swing.JMenuItem();
         mnuCRUD = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnuDelete = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -212,25 +213,25 @@ public class MainForm extends javax.swing.JFrame {
 
         mnuFile.setText("File");
 
-        jMenuItem1.setText("Exit");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnuExitActionPerformed(evt);
             }
         });
-        mnuFile.add(jMenuItem1);
+        mnuFile.add(mnuExit);
 
         mnuBar.add(mnuFile);
 
         mnuCRUD.setText("CRUD");
 
-        jMenuItem2.setText("Insert");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuDelete.setText("Insert");
+        mnuDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuDeleteActionPerformed(evt);
             }
         });
-        mnuCRUD.add(jMenuItem2);
+        mnuCRUD.add(mnuDelete);
 
         jMenuItem3.setText("Load");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -541,13 +542,13 @@ public class MainForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosing
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }//GEN-LAST:event_mnuExitActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnuDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuDeleteActionPerformed
         btnInsert.doClick();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnuDeleteActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         btnLoadIntoList.doClick();
@@ -644,8 +645,6 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkIsAlive;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -659,6 +658,8 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JList<String> lstUsers;
     private javax.swing.JMenuBar mnuBar;
     private javax.swing.JMenu mnuCRUD;
+    private javax.swing.JMenuItem mnuDelete;
+    private javax.swing.JMenuItem mnuExit;
     private javax.swing.JMenu mnuFile;
     private javax.swing.JMenu mnuHelp;
     private javax.swing.JRadioButton radGenderFemale;
